@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bosbh726o7uek"]
+
+[ext_resource type="Script" path="res://test_bed.gd" id="1_uagvf"]
+[ext_resource type="PackedScene" uid="uid://c8j0eo73ro01q" path="res://health_bar.tscn" id="2_wpao7"]
+
+[node name="TestBed" type="Node2D"]
+script = ExtResource("1_uagvf")
+
+[node name="AddHealth" type="Button" parent="."]
+offset_left = 153.0
+offset_top = 71.0
+offset_right = 192.0
+offset_bottom = 102.0
+text = "Add"
+
+[node name="RemoveHealth" type="Button" parent="."]
+offset_left = 233.0
+offset_top = 69.0
+offset_right = 304.0
+offset_bottom = 100.0
+text = "Remove"
+
+[node name="HealthBar" parent="." instance=ExtResource("2_wpao7")]
+offset_left = 155.0
+offset_top = 19.0
+offset_right = 317.0
+offset_bottom = 51.0
+
+[connection signal="pressed" from="AddHealth" to="." method="_on_add_health_pressed"]
+[connection signal="pressed" from="RemoveHealth" to="." method="_on_remove_health_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8j0eo73ro01q"]
+
+[ext_resource type="Texture2D" uid="uid://xtv2ta2gyj2p" path="res://healthbar.png" id="1_q4uk3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hvdy"]
+atlas = ExtResource("1_q4uk3")
+region = Rect2(0, 64, 162, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4oaa7"]
+texture = SubResource("AtlasTexture_8hvdy")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ikmy"]
+atlas = ExtResource("1_q4uk3")
+region = Rect2(0, 32, 162, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e7e3g"]
+texture = SubResource("AtlasTexture_4ikmy")
+texture_margin_left = 30.0
+texture_margin_right = 30.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="HealthBar" type="ProgressBar"]
+offset_right = 162.0
+offset_bottom = 32.0
+theme_override_styles/background = SubResource("StyleBoxTexture_4oaa7")
+theme_override_styles/fill = SubResource("StyleBoxTexture_e7e3g")
+value = 32.0
+show_percentage = false
+
+[node name="Borders" type="Sprite2D" parent="."]
+texture = ExtResource("1_q4uk3")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 162, 32)
